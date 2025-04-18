@@ -29,7 +29,9 @@ def verify_pesel(pesel: str) -> int:
         int: 1 jeśli numer jest poprawny, 0 jeśli nie.
     """
     ### TUTAJ PODAJ ROZWIĄZANIE ZADANIA
-
+    import numpy as np
+    pesel_weights = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3]
+    pesel_array = np.array(list(pesel), dtype=int)
     ### return 0 - powinno być zmienione i zwrócić prawdziwy wynik (zgodny z oczekiwaniami)
     return 0
 
