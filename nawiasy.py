@@ -30,9 +30,18 @@ def check_parentheses(s: str) -> bool:
     Returns:
         bool: True jeśli nawiasy są poprawne, False w przeciwnym wypadku.
     """
-    ### TUTAJ PODAJ ROZWIĄZANIE ZADANIA
-
-    ### return False - powinno być zmienione i zwrócić prawdziwy wynik (zgodny z oczekiwaniami)
+    counter = 0
+    for letter in s:
+        if letter == '(':
+            counter += 1
+        if letter == ')':
+            counter -= 1
+        if counter < 0:
+            return False
+    if counter == 0:
+        return True
+    else:
+        return False
     return False
 
 # Przykładowe wywołanie:
