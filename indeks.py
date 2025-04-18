@@ -47,10 +47,15 @@ def index_documents(documents: list[str], queries: list[str]) -> list[list[int]]
     Returns:
         list[list[int]]: Lista wyników dla kolejnych zapytań.
     """
-    ### TUTAJ PODAJ ROZWIĄZANIE ZADANIA
-
-    ### return [[]] - powinno być zmienione i zwrócić prawdziwy wynik (zgodny z oczekiwaniami)
-    return [[]]
+    results = []
+    for query in queries:
+        d = {}
+        for i in range(len(documents)):
+            if query in documents[i]:
+                d[i] = documents[i].count(query)
+        d = {k: v for k, v in sorted(d.items(), key=lambda item: item[1], reverse=True)}
+        results.append(list(d.keys()))
+    return results
 
 
 # Przykładowe wywołanie:
